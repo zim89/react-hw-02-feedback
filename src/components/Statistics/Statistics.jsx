@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { List, Span, Li } from './Styled';
