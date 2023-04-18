@@ -4,8 +4,6 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
 
 export default class App extends Component {
-  static propTypes = {};
-
   state = {
     good: 0,
     neutral: 0,

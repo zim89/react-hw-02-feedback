@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 import { List, Span, Li } from './Styled';
 import Notification from 'components/Notification/Notification';
+import PropTypes from 'prop-types';
 
 export default class Statistics extends Component {
-  static propTypes = {};
+  static propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
+  };
 
   render() {
     return (
@@ -15,7 +21,7 @@ export default class Statistics extends Component {
         {this.props.total > 0 && (
           <List>
             {Object.keys(this.props).map(key => (
-              <Li key={nanoid(5)}>
+              <Li key={key}>
                 {key}: <Span>{this.props[key]}</Span>
                 {key === 'positivePercentage' && <>%</>}
               </Li>
